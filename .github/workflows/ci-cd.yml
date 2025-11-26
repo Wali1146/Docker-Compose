@@ -22,7 +22,7 @@ jobs:
       run: |
         PROJECT_PATH=$(find /home -name 'Docker-Compose' -type d 2>/dev/null | head -1)
         if [ -z "$PROJECT_PATH" ]; then
-          echo "❌ Error: Folder php-todo tidak ditemukan di /home"
+          echo "❌ Error: Folder Docker-Compose tidak ditemukan di /home"
           echo "Pastikan project sudah di-clone ke salah satu user directory"
           exit 1
         fi
@@ -73,7 +73,7 @@ jobs:
       if: always()  # Selalu jalankan step ini (sukses atau gagal)
       run: |
         if [ ${{ job.status }} == 'success' ]; then
-          echo "✅ Deployment berhasil di laptop-andi! Aplikasi sudah update ke versi terbaru"
+          echo "✅ Deployment berhasil di laptop-wali! Aplikasi sudah update ke versi terbaru"
         else
-          echo "❌ Deployment gagal di laptop-andi! Cek log error di atas"
+          echo "❌ Deployment gagal di laptop-wali! Cek log error di atas"
         fi
