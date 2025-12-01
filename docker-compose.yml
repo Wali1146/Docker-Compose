@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-# Nginx Web Server (Custom Build)
+  # Nginx Web Server (Custom Build)
   nginx:
     build:
       context: .
@@ -13,7 +13,7 @@ services:
       - php
     networks:
       - app-network
-# PHP-FPM (untuk Nginx)
+  # PHP-FPM (untuk Nginx)
   php:
     build:
       context: .
@@ -31,7 +31,7 @@ services:
       - DB_PASSWORD=password
     networks:
       - app-network
-# MySQL Database Server
+  # MySQL Database Server
   mysql:
     image: mysql:8.0
     environment:
@@ -45,7 +45,7 @@ services:
       - "3306:3306"
     networks:
       - app-network
-# phpMyAdmin untuk Database Management
+  # phpMyAdmin untuk Database Management
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
