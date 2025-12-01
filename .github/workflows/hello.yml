@@ -4,7 +4,7 @@ on:
     branches: [ main ] # Pastikan nama branch sesuai!
 jobs:
   greeting:
-    runs-on: my-laptop # Ganti dengan label yang dibuat
+    runs-on: laptop-wali # Ganti dengan label yang dibuat
     steps:
     - name: Say Hello
       run: echo "Hello, World! 👋"
