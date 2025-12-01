@@ -1,15 +1,15 @@
 # Workflow GitHub Actions untuk Auto Deploy PHP Todo App
-# Workflow ini akan berjalan otomatis ketika ada push ke branch master
+# Workflow ini akan berjalan otomatis ketika ada push ke branch main
 # Fungsinya: pull kode terbaru dan rebuild semua Docker container
 
 name: CI/CD Auto Pull and Rebuild
 
 # Kapan workflow ini akan dijalankan:
-# 1. Ketika ada push ke branch master (otomatis)
+# 1. Ketika ada push ke branch main (otomatis)
 # 2. Manual trigger melalui GitHub Actions tab
 on:
   push:
-    branches: [ master ]  # Hanya berjalan ketika push ke master
+    branches: [ main ]  # Hanya berjalan ketika push ke main
   workflow_dispatch:      # Bisa dijalankan manual juga
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
         echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
         echo "✅ Found project at: $PROJECT_PATH"
         
-    # Step 1: Ambil kode terbaru dari branch master
+    # Step 1: Ambil kode terbaru dari branch main
     - name: Pull latest changes
       working-directory: ${{ env.PROJECT_PATH }}
       run: |
